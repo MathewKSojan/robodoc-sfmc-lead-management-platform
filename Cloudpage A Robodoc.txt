@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoboDoc - Robotic Surgery Solutions</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fa;
+    color:#333;
+}
+
+.hero{
+    background:linear-gradient(135deg,#005b96,#0084c8);
+    color:#fff;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    max-width:900px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.container{
+    max-width:1000px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+.form-card{
+    background:#fff;
+    padding:40px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.section-title{
+    color:#005b96;
+    margin-bottom:20px;
+    margin-top:25px;
+    border-bottom:2px solid #e5e5e5;
+    padding-bottom:10px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input[type=text],
+input[type=email],
+input[type=date],
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+textarea{
+    resize:vertical;
+    min-height:120px;
+}
+
+.radio-group,
+.checkbox-group{
+    margin-top:8px;
+}
+
+.radio-group label,
+.checkbox-group label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:normal;
+}
+
+.row{
+    display:flex;
+    gap:20px;
+}
+
+.col{
+    flex:1;
+}
+
+.submit-btn{
+    background:#005b96;
+    color:#fff;
+    border:none;
+    padding:15px 35px;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.submit-btn:hover{
+    background:#00446f;
+}
+
+.required{
+    color:red;
+}
+
+.footer-note{
+    margin-top:15px;
+    font-size:12px;
+    color:#666;
+}
+
+@media(max-width:768px){
+    .row{
+        flex-direction:column;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <h1>RoboDoc Advanced Robotic Surgery Systems</h1>
+    <p>
+        Empowering healthcare institutions with next-generation robotic-assisted
+        surgical technology. Request a consultation and discover how RoboDoc
+        can support your surgical excellence initiatives.
+    </p>
+</div>
+
+<div class="container">
+
+<div class="form-card">
+
+<form action="https://mcxxxxxxxxxxxxxxxxxtbm.pub.sfmc-content.com/n43szeigrqg" method="post">
+
+<h2 class="section-title">Contact Information</h2>
+
+<div class="row">
+    <div class="col form-group">
+        <label>First Name <span class="required">*</span></label>
+        <input type="text" name="FirstName" required>
+    </div>
+
+    <div class="col form-group">
+        <label>Last Name <span class="required">*</span></label>
+        <input type="text" name="LastName" required>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col form-group">
+        <label>Business Email <span class="required">*</span></label>
+        <input type="email" name="EmailAddress" required>
+    </div>
+
+    <div class="col form-group">
+        <label>Mobile Number <span class="required">*</span></label>
+        <input type="text" name="MobileNumber" required>
+    </div>
+</div>
+
+<div class="form-group">
+    <label>Job Title <span class="required">*</span></label>
+    <input type="text" name="JobTitle" required>
+</div>
+
+<h2 class="section-title">Organization Information</h2>
+
+<div class="form-group">
+    <label>Organization Name <span class="required">*</span></label>
+    <input type="text" name="OrganizationName" required>
+</div>
+
+<div class="form-group">
+    <label>Organization Type <span class="required">*</span></label>
+    <select name="OrganizationType" required>
+        <option value="">Select</option>
+        <option>Super Speciality Hospital</option>
+        <option>Multi-Speciality Hospital</option>
+        <option>Clinic</option>
+        <option>Surgical Center</option>
+        <option>Medical College</option>
+        <option>Healthcare Group</option>
+        <option>Other</option>
+    </select>
+</div>
+
+<h2 class="section-title">Clinical Interest Areas</h2>
+
+<div class="checkbox-group">
+    <label><input type="checkbox" name="SpecialtyInterest[]" value="Urology"> Urology</label>
+    <label><input type="checkbox" name="SpecialtyInterest[]" value="Gynecology"> Gynecology</label>
+    <label><input type="checkbox" name="SpecialtyInterest[]" value="General Surgery"> General Surgery</label>
+    <label><input type="checkbox" name="SpecialtyInterest[]" value="Thoracic Surgery"> Thoracic Surgery</label>
+    <label><input type="checkbox" name="SpecialtyInterest[]" value="Cardiac Surgery"> Cardiac Surgery</label>
+    <label><input type="checkbox" name="SpecialtyInterest[]" value="Orthopedics"> Orthopedics</label>
+    <label><input type="checkbox" name="SpecialtyInterest[]" value="Neurosurgery"> Neurosurgery</label>
+    <label><input type="checkbox" name="SpecialtyInterest[]" value="Multiple Specialties"> Multiple Specialties</label>
+</div>
+
+<h2 class="section-title">Infrastructure Assessment</h2>
+
+<div class="form-group">
+    <label>Current Robotic Surgery System?</label>
+
+    <div class="radio-group">
+        <label><input type="radio" name="ExistingRobotSystem" value="Yes"> Yes</label>
+        <label><input type="radio" name="ExistingRobotSystem" value="No"> No</label>
+        <label><input type="radio" name="ExistingRobotSystem" value="Under Evaluation"> Under Evaluation</label>
+    </div>
+</div>
+
+<div class="form-group">
+    <label>Number of Operating Theatres</label>
+
+    <select name="OperatingTheatres">
+        <option value="">Select</option>
+        <option>1-5</option>
+        <option>6-10</option>
+        <option>11-20</option>
+        <option>20+</option>
+    </select>
+</div>
+
+<h2 class="section-title">Consultation Request</h2>
+
+<div class="form-group">
+    <label>Discussion Type</label>
+
+    <div class="radio-group">
+        <label><input type="radio" name="DiscussionType" value="Product Demonstration"> Product Demonstration</label>
+        <label><input type="radio" name="DiscussionType" value="Clinical Consultation"> Clinical Consultation</label>
+        <label><input type="radio" name="DiscussionType" value="Commercial Discussion"> Commercial Discussion</label>
+        <label><input type="radio" name="DiscussionType" value="Technical Evaluation"> Technical Evaluation</label>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col form-group">
+        <label>Preferred Meeting Date</label>
+        <input type="date" name="PreferredMeetingDate">
+    </div>
+
+    <div class="col form-group">
+        <label>Preferred Contact Method</label>
+
+        <div class="radio-group">
+            <label><input type="radio" name="ContactMethod" value="Email"> Email</label>
+            <label><input type="radio" name="ContactMethod" value="Phone"> Phone</label>
+            <label><input type="radio" name="ContactMethod" value="Virtual Meeting"> Virtual Meeting</label>
+        </div>
+
+    </div>
+
+</div>
+
+<h2 class="section-title">Additional Requirements</h2>
+
+<div class="form-group">
+    <label>Comments / Requirements</label>
+
+    <textarea name="Comments"></textarea>
+</div>
+
+<h2 class="section-title">Consent</h2>
+
+<div class="checkbox-group">
+
+<label>
+<input type="checkbox" name="ContactConsent" value="Yes" required>
+I agree to be contacted by RoboDoc regarding robotic surgery solutions.
+</label>
+
+<label>
+<input type="checkbox" name="MarketingConsent" value="Yes">
+I agree to receive educational materials, product updates, and event invitations.
+</label>
+
+</div>
+
+
+<br><br>
+
+<button type="submit" class="submit-btn">
+Request Consultation
+</button>
+
+<div class="footer-note">
+Fields marked with * are mandatory.
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</body>
+</html>
