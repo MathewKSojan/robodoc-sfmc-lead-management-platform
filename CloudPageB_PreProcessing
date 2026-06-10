@@ -1,0 +1,152 @@
+<script runat="server">
+  Platform.Load("Core","1.1.1");
+  try {
+    var FirstName = Platform.Request.GetFormField("FirstName");
+    var LastName = Platform.Request.GetFormField("LastName");
+    var EmailAddress = Platform.Request.GetFormField("EmailAddress");
+    var MobileNumber = Platform.Request.GetFormField("MobileNumber");
+    var JobTitle = Platform.Request.GetFormField("JobTitle");
+    var OrganizationName = Platform.Request.GetFormField("OrganizationName");
+    var OrganizationType = Platform.Request.GetFormField("OrganizationType");
+    var ExistingRobotSystem = Platform.Request.GetFormField("ExistingRobotSystem");
+    var OperatingTheatres = Platform.Request.GetFormField("OperatingTheatres");
+    var DiscussionType = Platform.Request.GetFormField("DiscussionType");
+    var PreferredMeetingDate = Platform.Request.GetFormField("PreferredMeetingDate");
+    var ContactMethod = Platform.Request.GetFormField("ContactMethod");
+    var Comments = Platform.Request.GetFormField("Comments");
+    var ContactConsent = Platform.Request.GetFormField("ContactConsent");
+    var MarketingConsent = Platform.Request.GetFormField("MarketingConsent");
+    var SubscriberKey = EmailAddress;
+    
+    //DE insert
+    
+    var de = DataExtension.Init("RoboDoc_Lead_Capture_DE");
+    de.Rows.Add({
+      SubscriberKey : SubscriberKey,
+      FirstName : FirstName,
+      LastName : LastName,
+      EmailAddress : EmailAddress,
+      MobileNumber : MobileNumber,
+      JobTitle : JobTitle,
+      OrganizationName : OrganizationName,
+      OrganizationType : OrganizationType,
+      ExistingRobotSystem : ExistingRobotSystem,
+      OperatingTheatres : OperatingTheatres,
+      DiscussionType : DiscussionType,
+      PreferredMeetingDate : PreferredMeetingDate,
+      ContactMethod : ContactMethod,
+      Comments : Comments,
+      ContactConsent : ContactConsent,
+      MarketingConsent : MarketingConsent,
+      SubmissionDate : new Date()
+    }
+               );
+    Write("DE Insert Successful");
+    
+    //Authentication
+    
+    var authPayload = Stringify({
+      client_id: "xxxxxxxxxxxxxxxxxxxxx",
+      client_secret: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      grant_type: "client_credentials"
+    }
+                               );
+    var authReq = new Script.Util.HttpRequest(
+      "https://xxxxxxxxxxxxxxxxxxxxxxxxx.auth.marketingcloudapis.com/v2/token"
+    );
+    authReq.method = "POST";
+    authReq.contentType = "application/json";
+    authReq.postData = authPayload;
+    var authResponse = authReq.send();
+    Write("<br>Auth Status: " + authResponse.statusCode);
+    var authResult = Platform.Function.ParseJSON(
+      String(authResponse.content)
+    );
+    var accessToken = authResult.access_token;
+    if(!accessToken){
+      Write("<br>Authentication Failed");
+      return;
+    }
+    Write("<br>Token Generated");
+    
+    //Add Fire Event
+    
+    var eventPayload = Stringify({
+
+    ContactKey : SubscriberKey,
+
+    EventDefinitionKey :
+    "APIEvent-74f84014-8b49-9079-e644-75d792dcf715",
+
+    Data : {
+
+        SubscriberKey : SubscriberKey,
+        EmailAddress : EmailAddress,
+        FirstName : FirstName,
+        LastName : LastName,
+        MobileNumber : MobileNumber,
+        JobTitle : JobTitle,
+        OrganizationName : OrganizationName
+
+    }
+
+});
+
+Write("<br><br>Payload:<br>");
+Write(eventPayload);
+    
+    //Send Event
+    var fireReq = new Script.Util.HttpRequest(
+    "https://xxxxxxxxxxxxxxxxxxxxxxxxxx.rest.marketingcloudapis.com/interaction/v1/events"
+);
+
+fireReq.method = "POST";
+fireReq.contentType = "application/json";
+
+fireReq.setHeader(
+    "Authorization",
+    "Bearer " + accessToken
+);
+
+fireReq.postData = eventPayload;
+
+var fireResponse = fireReq.send();
+
+Write("<br><br>Fire Event Status: " + fireResponse.statusCode);
+Write("<br>Response:<br>");
+Write(String(fireResponse.content));
+    if(fireResponse.statusCode == 201){
+
+    Platform.Response.Redirect(
+        "https://xxxxxxxxxxxxxxxxxxxxx.pub.sfmc-content.com/yusaupxkdam"
+    );
+
+}
+else{
+
+    Write("<br><br>Journey Trigger Failed");
+
+}
+  }
+  catch(ex){
+    Write(Stringify(ex));
+    try {
+
+    var errorDE = DataExtension.Init("RoboDoc_Error_Log_DE");
+
+    errorDE.Rows.Add({
+        ErrorID : Platform.Function.GUID(),
+        ErrorMessage : Stringify(ex),
+        ErrorDate : new Date(),
+        SubscriberKey : SubscriberKey || ""
+    });
+
+}
+catch(logErr){
+
+    Write("<br>Error logging failed:<br>");
+    Write(Stringify(logErr));
+
+}
+  }
+</script>
